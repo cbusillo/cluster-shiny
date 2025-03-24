@@ -18,3 +18,9 @@ spec:
       defaultReplicaCount: 3
     persistence:
       defaultStorageClass: true
+    ingress:
+      enabled: true
+      ingressClassName: internal
+      host: longhorn.shinycomputers.com
+      path: /
+
