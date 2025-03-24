@@ -33,6 +33,10 @@ spec:
               LOG_WITHOUT_NEWLINE: true
               LOG_IGNORE_PATH: /healthz
               PROMETHEUS_ENABLED: true
+              HOSTNAME:
+                valueFrom:
+                  fieldRef:
+                    fieldPath: spec.nodeName
             probes:
               liveness: &probes
                 enabled: true
