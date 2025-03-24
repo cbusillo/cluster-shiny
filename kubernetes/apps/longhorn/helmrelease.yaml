@@ -19,6 +19,7 @@ spec:
     persistence:
       defaultStorageClass: true
     ingress:
+      enabled: true
       app:
         className: internal
         hosts:
