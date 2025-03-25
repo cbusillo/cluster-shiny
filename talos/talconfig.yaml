@@ -23,7 +23,7 @@ cniConfig:
 nodes:
   - hostname: "macpro-0"
     ipAddress: "192.168.1.230"
-    installDisk: "/dev/sdb"
+    installDisk: /dev/disk/by-id/wwn-0x500253890000000
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/c9078f9419961640c712a8bf2bb9174933dfcf1da383fd8ea2b7dc21493f8bac
@@ -40,12 +40,16 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.1.242"
+    machineDisks:
+      - device: /dev/disk/by-id/wwn-0x500a0751e59983a2
+        partitions:
+          - mountpoint: /var/mnt/longhorn-0
   - hostname: "macbook-0"
     ipAddress: "192.168.1.232"
-    installDisk: "/dev/nvme0n1"
+    installDisk: /dev/disk/by-id/nvme-eui.0025385063705212
     machineSpec:
       secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c9078f9419961640c712a8bf2bb9174933dfcf1da383fd8ea2b7dc21493f8bac
+    talosImageURL: factory.talos.dev/installer/c9078f9419961640c712a8bf2bb9174933dfcf1da383fd8ea2b7dc21493f8bac
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -59,6 +63,10 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.1.242"
+    machineDisks:
+      - device: /dev/disk/by-id/wwn-0x500a0751e2ab840d
+        partitions:
+          - mountpoint: /var/mnt/longhorn-0
   - hostname: "nuc-0"
     ipAddress: "192.168.1.236"
     installDisk: "/dev/sda"
@@ -78,7 +86,10 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.1.242"
-
+    machineDisks:
+      - device: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_0x500a0751e6312f94
+        partitions:
+          - mountpoint: /var/mnt/longhorn-0
 # Global patches
 patches:
   - "@./patches/global/machine-files.yaml"
