@@ -20,10 +20,10 @@ spec:
       defaultStorageClass: true
     ingress:
       enabled: true
-      ingressClassName: internal    # if you have an internal ingress controller
+      ingressClassName: internal
       host: longhorn.shinycomputers.com
-      tls: false                    # or true if you want TLS and have a certificate set up
+      tls: false
       path: /
-      pathType: Prefix             # "Prefix" is common; can also use "ImplementationSpecific"
+      pathType: Prefix
       annotations: {}
 
