@@ -9,7 +9,9 @@
 /github-push-token.txt
 # Template config files
 /cluster.yaml
+/cluster.*.yaml
 /nodes.yaml
+/nodes.*.yaml
 # Kubernetes
 kubeconfig
 talosconfig
